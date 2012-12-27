@@ -1,0 +1,14 @@
+# TAP version 13
+# test only interpreted
+ok 1 should be equivalent
+# tests 1
+# pass  1
+# ok
+ok 2 run-only/runner.js
+
+
+1..2
+# tests 2
+# pass  2
+
+# ok

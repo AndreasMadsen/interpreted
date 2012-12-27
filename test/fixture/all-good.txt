@@ -1,0 +1,14 @@
+# TAP version 13
+# test stringify interpreted
+ok 1 should be equivalent
+# tests 1
+# pass  1
+# ok
+ok 2 all-good/runner.js
+
+
+1..2
+# tests 2
+# pass  2
+
+# ok

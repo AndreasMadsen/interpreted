@@ -1,0 +1,29 @@
+{
+  "name": "interpreted",
+  "description": "node-tap wrapper for testing input/output functionality",
+  "version": "0.2.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "main": "./interpreted.js",
+  "scripts": {
+    "test": "tap test/runner.js"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/interpreted.git"
+  },
+  "keywords": [
+    "interpreted",
+    "complie",
+    "modifty",
+    "transform"
+  ],
+  "dependencies": {
+    "tap": "0.3.x",
+    "async": "0.1.x"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "0.8",
+    "npm": "1"
+  }
+}
