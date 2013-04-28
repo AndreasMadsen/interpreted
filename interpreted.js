@@ -1,4 +1,3 @@
-
 var fs = require('fs');
 var tap = require('tap');
 var path = require('path');
@@ -54,7 +53,7 @@ Intrepreted.prototype._assignStart = function (callback) {
 
   if (this.methods.start === undefined) return;
 
-  tap.test('start interperted tester', function (t) {
+  tap.test('start interpreted tester', function (t) {
     process.nextTick(function () {
       self.methods.start(function (err) {
         if (err) throw err;
