@@ -28,7 +28,7 @@ interpreted({
 	// all tests will be used.
 	run: ['example'],
 	
-	// optional, update flag. Instead of testing expected files will be overwritten, with
+	// optional, update flag. Instead of testing expected files, they will be overwritten with
 	// the actual value. Default: false
 	update: false,
 	
