@@ -1,10 +1,12 @@
+TAP version 13
+# runner.js
 # TAP version 13
 # test only interpreted
 ok 1 should be equivalent
 # tests 1
 # pass  1
 # ok
-ok 2 run-only/runner.js
+ok 2 test/run-only/runner.js
 
 
 1..2

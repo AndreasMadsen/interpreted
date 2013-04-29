@@ -1,20 +1,13 @@
-not ok 1 expected-missing/runner.js
+TAP version 13
+# runner.js
+not ok 1 test/expected-missing/runner.js
   ---
-    exit:    1
+    exit:    8
     stderr:  |
-      events.js:71
-              throw arguments[1]; // Unhandled 'error' event
-                             ^
+      events.js:72
+              throw er; // Unhandled 'error' event
+                    ^
       Error: stringify expected file is missing
-          at Intrepreted._validateFiles (/Users/Andreas/Sites/node_modules/interpreted/interpreted.js:130:9)
-          at /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:42:10
-          at Intrepreted._readdir (/Users/Andreas/Sites/node_modules/interpreted/interpreted.js:181:5)
-          at _asyncMap (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:190:13)
-          at async.forEach (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:94:25)
-          at _asyncMap (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:187:17)
-          at async.parallel.results (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:459:34)
-          at Intrepreted._readdir.async.parallel.unique (/Users/Andreas/Sites/node_modules/interpreted/interpreted.js:156:9)
-          at Object.oncomplete (fs.js:297:15)
     command: "node" "runner.js"
   ...
 

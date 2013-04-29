@@ -1,18 +1,13 @@
-not ok 1 test-bad/runner.js
+TAP version 13
+# runner.js
+not ok 1 test/test-bad/runner.js
   ---
-    exit:    1
+    exit:    8
     stderr:  |
-      /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:101
+      /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:100
               if (err) throw err;
                              ^
       Error: fake error
-          at Object.interpreted.test (/Users/Andreas/Sites/node_modules/interpreted/test/test-bad/runner.js:10:14)
-          at Intrepreted._assignTest (/Users/Andreas/Sites/node_modules/interpreted/interpreted.js:100:20)
-          at async.parallel (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:476:17)
-          at async.forEach (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:94:25)
-          at async.parallel (/Users/Andreas/Sites/node_modules/interpreted/node_modules/async/lib/async.js:473:21)
-          at fs.readFile (fs.js:176:14)
-          at Object.oncomplete (fs.js:297:15)
     command: "node" "runner.js"
   ...
 

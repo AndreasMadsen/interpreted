@@ -1,14 +1,13 @@
-not ok 1 start-bad/runner.js
+TAP version 13
+# runner.js
+not ok 1 test/start-bad/runner.js
   ---
-    exit:    1
+    exit:    8
     stderr:  |
-      /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:60
+      /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:59
               if (err) throw err;
                              ^
       Error: fake error
-          at Object.interpreted.start (/Users/Andreas/Sites/node_modules/interpreted/test/start-bad/runner.js:10:14)
-          at Intrepreted._assignStart (/Users/Andreas/Sites/node_modules/interpreted/interpreted.js:59:20)
-          at process.startup.processNextTick.process._tickCallback (node.js:244:9)
     command: "node" "runner.js"
   ...
 
