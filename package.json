@@ -18,7 +18,7 @@
     "transform"
   ],
   "dependencies": {
-    "tap": "0.3.x",
+    "tap": "0.4.x",
     "async": "0.1.x"
   },
   "license": "MIT",
