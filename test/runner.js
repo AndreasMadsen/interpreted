@@ -5,6 +5,17 @@ var test = require('tap').test;
 var flower = require('flower');
 var spawn = require('child_process').spawn;
 
+function replaceAll(string, out, replacer) {
+  while (true) {
+    var index = string.indexOf(out);
+    if (index === -1) break;
+
+    string = string.slice(0, index) + replacer + string.slice(index + out.length);
+  }
+
+  return string;
+}
+
 var tapPath = path.resolve(require.resolve('tap'), '..', '..', 'bin', 'tap.js');
 function runTest(name, callback) {
   callback = callback || function (t) {
@@ -16,6 +27,9 @@ function runTest(name, callback) {
 
     flower.stream2buffer(cp.stdout, function (err, actual) {
       t.equal(err, null);
+
+      // Replace stacktrace paths
+      actual = replaceAll(actual.toString(), path.resolve(__dirname, '..'), '/interpreted');
 
       fs.readFile(path.resolve(__dirname, 'fixture', name + '.txt'), function (err, expected) {
         t.deepEqual(actual.toString(), expected.toString());

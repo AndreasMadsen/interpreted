@@ -4,7 +4,7 @@ not ok 1 test/start-bad/runner.js
   ---
     exit:    8
     stderr:  |
-      /Users/Andreas/Sites/node_modules/interpreted/interpreted.js:59
+      /interpreted/interpreted.js:59
               if (err) throw err;
                              ^
       Error: fake error
