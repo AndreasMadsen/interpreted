@@ -1,4 +1,6 @@
 
+Error.stackTraceLimit = 0;
+
 var path = require('path');
 var interpreted = require('../../interpreted.js');
 
