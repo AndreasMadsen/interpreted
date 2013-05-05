@@ -21,6 +21,9 @@
     "tap": "0.4.x",
     "async": "0.1.x"
   },
+  "devDependencies": {
+    "flower": "0.6.x"
+  },
   "license": "MIT",
   "engines": {
     "node": "0.8",
