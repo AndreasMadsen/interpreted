@@ -57,7 +57,7 @@ Intrepreted.prototype._assignStart = function (callback) {
     process.nextTick(function () {
       self.methods.start(function (err) {
         if (err) throw err;
-  
+
         t.end();
       });
     });
@@ -73,7 +73,7 @@ Intrepreted.prototype._assignClose = function (callback) {
     process.nextTick(function () {
       self.methods.close(function (err) {
         if (err) throw err;
-  
+
         t.end();
       });
     });
@@ -95,7 +95,7 @@ Intrepreted.prototype._assignTest = function (name) {
       }
     }, function (err, file) {
       if (err) throw err;
-			
+
       self.methods.test(name, file.source, function (err, result) {
         if (err) throw err;
 

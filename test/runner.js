@@ -68,7 +68,7 @@ test('update-file', runTest('update-file', function (t) {
       t.equal(err, null);
 
       t.deepEqual(actual, expected);
-      
+
       fs.writeFile(acutalPath, restore, function () {
         t.equal(err, null);
         t.end();
