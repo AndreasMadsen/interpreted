@@ -5,6 +5,10 @@ var util = require('util');
 var async = require('async');
 var events = require('events');
 
+function isObj(value) {
+  return typeof(value) === 'object' && value !== null;
+}
+
 function Intrepreted(settings) {
   if (!(this instanceof Intrepreted)) return new Intrepreted(settings);
 
@@ -100,14 +104,16 @@ Intrepreted.prototype._assignTest = function (name) {
         if (err) throw err;
 
         if (self.update) {
-          result = JSON.stringify(result, null, '\t');
+          if (isObj(result)) result = JSON.stringify(result, null, '\t');
           fs.writeFile(self.files.expected[name], result, function (err) {
             if (err) throw err;
 
             t.end();
           });
         } else {
-          t.deepEqual(result, JSON.parse(file.expected));
+          var expected = file.expected;
+          if (isObj(result)) expected = JSON.parse(expected);
+          t.deepEqual(result, expected);
           t.end();
         }
       });

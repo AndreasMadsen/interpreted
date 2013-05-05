@@ -37,8 +37,8 @@ interpreted({
 		callback(null);
 	},
 
-	// required. This method will be used to test the files. Note that there
-	// must be passed a JSON valid value to the callback.
+	// required. This method will be used to test the files. Note that if the
+	// the callback is passed a JSON valid value it will be stringified.
 	test: function (name, content, callback) {
 		callback(null, YAML.parse(content)); // real object (e. q. { test: true })
 	},
