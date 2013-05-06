@@ -1,4 +1,4 @@
-#interpreted
+#interpreted [![Build Status](https://travis-ci.org/AndreasMadsen/interpreted.png?branch=master)](https://travis-ci.org/AndreasMadsen/interpreted)
 
 > node-tap wrapper for testing input/output functionality
 
