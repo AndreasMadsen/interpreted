@@ -6,7 +6,7 @@ ok 1 should be equivalent
 # tests 1
 # pass  1
 # ok
-ok 2 test/run-only/runner.js
+ok 2 /interpreted/test/run-only/runner.js
 
 
 1..2

@@ -4,7 +4,7 @@ TAP version 13
 # test stringify interpreted
 # tests 0
 # ok
-ok 1 test/update-file/runner.js
+ok 1 /interpreted/test/update-file/runner.js
 
 
 1..1

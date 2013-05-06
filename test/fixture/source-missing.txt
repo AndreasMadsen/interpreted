@@ -1,6 +1,6 @@
 TAP version 13
 # runner.js
-not ok 1 test/source-missing/runner.js
+not ok 1 /interpreted/test/source-missing/runner.js
   ---
     exit:    8
     stderr:  |

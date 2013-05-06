@@ -23,7 +23,9 @@ function runTest(name, callback) {
   };
 
   return function (t) {
-    var cp = spawn(tapPath, ['--tap', path.resolve(__dirname, name, 'runner.js')]);
+    var cp = spawn(tapPath, ['--tap', path.resolve(__dirname, name, 'runner.js')], {
+      cwd: path.resolve(__dirname, name)
+    });
 
     flower.stream2buffer(cp.stdout, function (err, actual) {
       t.equal(err, null);
