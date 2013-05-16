@@ -56,6 +56,8 @@ test('start bad', runTest('start-bad'));
 
 test('test bad', runTest('test-bad'));
 
+test('expected string', runTest('expected-string'));
+
 var acutalPath = path.resolve(__dirname, 'update-file', 'expected', 'stringify.json');
 var expectedPath = path.resolve(__dirname, 'fixture', 'stringify.json');
 var restore = fs.readFileSync(acutalPath, 'utf8');
