@@ -1,0 +1,16 @@
+TAP version 13
+# runner.js
+# TAP version 13
+# test string interpreted
+ok 1 should be equivalent
+# tests 1
+# pass  1
+# ok
+ok 2 /interpreted/test/expected-string/runner.js
+
+
+1..2
+# tests 2
+# pass  2
+
+# ok

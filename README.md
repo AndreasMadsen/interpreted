@@ -15,7 +15,7 @@ npm install interpreted
 var interpreted = require('interpreted');
 
 interpreted({
-	
+
 	// required. full path to the source file directory and the expected directory
 	// the expected directory should contain JSON files (e.q. example.json)
 	// and the source directory can contain anything. Note that the basename
@@ -23,26 +23,26 @@ interpreted({
 	// (e.q yaml to json converter: source/example.yaml, expected/example.json)
 	source: path.resolve(__dirname, 'source'),
 	expected: path.resolve(__dirname, 'expected'),
-	
+
 	// optional. the basenames of the files to use in tests. If this is not specified
 	// all tests will be used.
 	run: ['example'],
-	
+
 	// optional, update flag. Instead of testing expected files, they will be overwritten with
 	// the actual value. Default: false
 	update: false,
-	
+
 	// optional. This method will execute before the file tests.
 	start: function (callback) {
 		callback(null);
 	},
-	
-	// required. This method will be used to test the files. Note that there
-	// must be passed a JSON valid value to the callback.
+
+	// required. This method will be used to test the files. Note that if the
+	// the callback is passed a JSON valid value it will be stringified.
 	test: function (name, content, callback) {
 		callback(null, YAML.parse(content)); // real object (e. q. { test: true })
 	},
-	
+
 	// optional. This method will execute after the file tests.
 	close: function (callback) {
 		callback(null);
