@@ -1,7 +1,7 @@
 {
   "name": "interpreted",
   "description": "node-tap wrapper for testing input/output functionality",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./interpreted.js",
   "scripts": {
