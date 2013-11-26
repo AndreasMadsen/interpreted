@@ -46,6 +46,12 @@ interpreted({
 	// optional. This method will execute after the file tests.
 	close: function (callback) {
 		callback(null);
+	},
+
+	// optional. This configuration object will be passed to the tap.test
+	// function.
+	tap: {
+		timeout: 3000
 	}
 });
 

@@ -29,6 +29,8 @@ function Intrepreted(settings) {
     total: []
   };
 
+  this.tapOptions = settings.tap || {};
+
   this._readdir(function (err) {
     if (err) return self.emit('error', err);
 
@@ -53,7 +55,7 @@ Intrepreted.prototype._assignStart = function (callback) {
 
   if (this.methods.start === undefined) return;
 
-  tap.test('start interpreted tester', function (t) {
+  tap.test('start interpreted tester', this.tapOptions, function (t) {
     process.nextTick(function () {
       self.methods.start(function (err) {
         if (err) throw err;
@@ -69,7 +71,7 @@ Intrepreted.prototype._assignClose = function (callback) {
 
   if (this.methods.close === undefined) return;
 
-  tap.test('close interperted tester', function (t) {
+  tap.test('close interperted tester', this.tapOptions, function (t) {
     process.nextTick(function () {
       self.methods.close(function (err) {
         if (err) throw err;
@@ -83,7 +85,7 @@ Intrepreted.prototype._assignClose = function (callback) {
 Intrepreted.prototype._assignTest = function (name) {
   var self = this;
 
-  tap.test('test ' + name + ' interpreted', function (t) {
+  tap.test('test ' + name + ' interpreted', this.tapOptions, function (t) {
 
     async.parallel({
       source: function (done) {
