@@ -4,7 +4,7 @@ not ok 1 /interpreted/test/test-bad/runner.js
   ---
     exit:    8
     stderr:  |
-      /interpreted/interpreted.js:100
+      /interpreted/interpreted.js:102
               if (err) throw err;
                              ^
       Error: fake error
