@@ -8,7 +8,7 @@ not ok 1 /interpreted/test/start-bad/runner.js
               if (err) throw err;
                              ^
       Error: fake error
-    command: "/Users/Andreas/node/bin/node runner.js"
+    command: "/node runner.js"
   ...
 
 

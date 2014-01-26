@@ -8,7 +8,7 @@ not ok 1 /interpreted/test/expected-missing/runner.js
             throw er; // Unhandled 'error' event
                   ^
       Error: stringify expected file is missing
-    command: "/Users/Andreas/node/bin/node runner.js"
+    command: "/node runner.js"
   ...
 
 
