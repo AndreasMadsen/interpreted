@@ -32,6 +32,7 @@ function runTest(name, callback) {
 
       // Replace stacktrace paths
       actual = replaceAll(actual.toString(), path.resolve(__dirname, '..'), '/interpreted');
+      actual = actual.replace(/exit:(\s+)8/, "exit:$11");
 
       fs.readFile(path.resolve(__dirname, 'fixture', name + '.txt'), function (err, expected) {
         t.deepEqual(actual.toString(), expected.toString());
