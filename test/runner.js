@@ -2,7 +2,7 @@
 var fs = require('fs');
 var path = require('path');
 var test = require('tap').test;
-var flower = require('flower');
+var endpoint = require('endpoint');
 var spawn = require('child_process').spawn;
 
 function replaceAll(string, out, replacer) {
@@ -27,7 +27,7 @@ function runTest(name, callback) {
       cwd: path.resolve(__dirname, name)
     });
 
-    flower.stream2buffer(cp.stdout, function (err, actual) {
+    cp.stdout.pipe(endpoint(function (err, actual) {
       t.equal(err, null);
 
       // Replace stacktrace paths
@@ -38,7 +38,7 @@ function runTest(name, callback) {
 
         callback(t);
       });
-    });
+    }));
   };
 }
 
