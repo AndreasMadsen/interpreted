@@ -19,14 +19,11 @@
   ],
   "dependencies": {
     "tap": "0.4.x",
-    "async": "0.1.x"
+    "async": "0.2.x",
+    "util-extend": "1.0.x"
   },
   "devDependencies": {
-    "flower": "0.6.x"
+    "endpoint": "0.4.x"
   },
-  "license": "MIT",
-  "engines": {
-    "node": "0.10",
-    "npm": "1"
-  }
+  "license": "MIT"
 }

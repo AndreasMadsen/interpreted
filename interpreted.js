@@ -4,6 +4,7 @@ var path = require('path');
 var util = require('util');
 var async = require('async');
 var events = require('events');
+var extend = require('util-extend');
 
 function Intrepreted(settings) {
   if (!(this instanceof Intrepreted)) return new Intrepreted(settings);
@@ -28,6 +29,25 @@ function Intrepreted(settings) {
     expected: {},
     total: []
   };
+
+  this.types = extend({
+    'json': {
+      test: function (t, actual, expected) {
+        t.deepEqual(actual, JSON.parse(expected));
+      },
+      update: function (actual) {
+        return JSON.stringify(actual, null, '\t');
+      }
+    },
+    'default': {
+      test: function (t, actual, expected) {
+        t.strictEqual(actual, expected);
+      },
+      update: function (actual) {
+        return actual;
+      }
+    }
+  }, settings.types);
 
   this.tapOptions = settings.tap || {};
 
@@ -59,7 +79,7 @@ Intrepreted.prototype._assignStart = function (callback) {
     process.nextTick(function () {
       self.methods.start(function (err) {
         if (err) throw err;
-  
+
         t.end();
       });
     });
@@ -75,7 +95,7 @@ Intrepreted.prototype._assignClose = function (callback) {
     process.nextTick(function () {
       self.methods.close(function (err) {
         if (err) throw err;
-  
+
         t.end();
       });
     });
@@ -97,19 +117,21 @@ Intrepreted.prototype._assignTest = function (name) {
       }
     }, function (err, file) {
       if (err) throw err;
-			
+
       self.methods.test(name, file.source, function (err, result) {
+
         if (err) throw err;
+        var expectedPath = self.files.expected[name];
+        var extname = path.extname(expectedPath).slice(1);
+        var validater = self.types[extname] || self.types['default'];
 
         if (self.update) {
-          result = JSON.stringify(result, null, '\t');
-          fs.writeFile(self.files.expected[name], result, function (err) {
+          fs.writeFile(expectedPath, validater.update(result), function (err) {
             if (err) throw err;
-
             t.end();
           });
         } else {
-          t.deepEqual(result, JSON.parse(file.expected));
+          validater.test(t, result, file.expected);
           t.end();
         }
       });

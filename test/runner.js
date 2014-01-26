@@ -44,6 +44,8 @@ function runTest(name, callback) {
 
 test('all good', runTest('all-good'));
 
+test('file-ext', runTest('file-ext'));
+
 test('run only', runTest('run-only'));
 
 test('close bad', runTest('close-bad'));
@@ -68,7 +70,7 @@ test('update-file', runTest('update-file', function (t) {
       t.equal(err, null);
 
       t.deepEqual(actual, expected);
-      
+
       fs.writeFile(acutalPath, restore, function () {
         t.equal(err, null);
         t.end();

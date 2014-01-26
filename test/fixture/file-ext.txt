@@ -1,0 +1,20 @@
+TAP version 13
+# runner.js
+# TAP version 13
+# test default interpreted
+ok 1 should be equal
+# test special interpreted
+ok 2 (unnamed assert)
+# test stringify interpreted
+ok 3 should be equivalent
+# tests 3
+# pass  3
+# ok
+ok 4 /interpreted/test/file-ext/runner.js
+
+
+1..4
+# tests 4
+# pass  4
+
+# ok

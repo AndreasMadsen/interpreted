@@ -2,13 +2,13 @@ TAP version 13
 # runner.js
 not ok 1 /interpreted/test/test-bad/runner.js
   ---
-    exit:    8
+    exit:    1
     stderr:  |
-      /interpreted/interpreted.js:102
+      /interpreted/interpreted.js:123
               if (err) throw err;
                              ^
       Error: fake error
-    command: "node" "runner.js"
+    command: "/Users/Andreas/node/bin/node runner.js"
   ...
 
 

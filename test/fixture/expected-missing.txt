@@ -2,13 +2,13 @@ TAP version 13
 # runner.js
 not ok 1 /interpreted/test/expected-missing/runner.js
   ---
-    exit:    8
+    exit:    1
     stderr:  |
-      events.js:72
-              throw er; // Unhandled 'error' event
-                    ^
+      events.js:82
+            throw er; // Unhandled 'error' event
+                  ^
       Error: stringify expected file is missing
-    command: "node" "runner.js"
+    command: "/Users/Andreas/node/bin/node runner.js"
   ...
 
 
