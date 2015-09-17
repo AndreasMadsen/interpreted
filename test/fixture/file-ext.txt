@@ -1,20 +1,23 @@
 TAP version 13
-# runner.js
-# TAP version 13
-# test default interpreted
-ok 1 should be equal
-# test special interpreted
-ok 2 (unnamed assert)
-# test stringify interpreted
-ok 3 should be equivalent
-# tests 3
-# pass  3
-# ok
-ok 4 /interpreted/test/file-ext/runner.js
+    # Subtest: /interpreted/test/file-ext/runner.js
+        # Subtest: test default interpreted
+        ok 1 - should be equal
+        1..1
+    ok 1 - test default interpreted # time=13.292ms
 
+        # Subtest: test special interpreted
+        ok 1 - expect truthy value
+        1..1
+    ok 2 - test special interpreted # time=5.65ms
 
-1..4
-# tests 4
-# pass  4
+        # Subtest: test stringify interpreted
+        ok 1 - should be equivalent
+        1..1
+    ok 3 - test stringify interpreted # time=2.822ms
 
-# ok
+    1..3
+    # time=46.725ms
+ok 1 - /interpreted/test/file-ext/runner.js # time=186.496ms
+
+1..1
+# time=198.767ms

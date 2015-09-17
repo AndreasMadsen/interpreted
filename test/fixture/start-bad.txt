@@ -1,18 +1,58 @@
 TAP version 13
-# runner.js
-not ok 1 /interpreted/test/start-bad/runner.js
+    # Subtest: /interpreted/test/start-bad/runner.js
+        # Subtest: start interpreted tester
+        not ok 1 - Error: fake error
+          ---
+          test: start interpreted tester
+          message: 'Error: fake error'
+          stack: |
+            Error
+          ...
+        1..1
+        # failed 1 of 1 tests
+    not ok 1 - start interpreted tester # time=15.203ms
+      ---
+      at:
+        file: /interpreted/interpreted.js
+        line: 78
+        column: 7
+        type: Intrepreted
+        function: Intrepreted._assignStart
+        method: _assignStart
+      results:
+        plan:
+          start: 1
+          end: 1
+        count: 1
+        pass: 0
+        ok: false
+        fail: 1
+        time: 15.203
+      source: |
+        tap.test('start interpreted tester', this.tapOptions, function (t) {
+      ...
+
+    1..1
+    # failed 1 of 1 tests
+    # time=45.01ms
+not ok 1 - /interpreted/test/start-bad/runner.js # time=196.513ms
   ---
-    exit:    1
-    stderr:  |
-      /interpreted/interpreted.js:81
-              if (err) throw err;
-                       ^
-      
-      Error: fake error
-    command: "/node runner.js"
+  command: /node
+  file: /interpreted/test/start-bad/runner.js
+  arguments:
+    - /interpreted/test/start-bad/runner.js
+  timeout: 30000
+  results:
+    plan:
+      start: 1
+      end: 1
+    pass: 0
+    ok: false
+    fail: 1
+    count: 1
+  exitCode: 1
   ...
 
-
 1..1
-# tests 1
-# fail  1
+# failed 1 of 1 tests
+# time=212.368ms

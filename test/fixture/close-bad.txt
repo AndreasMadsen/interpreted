@@ -1,18 +1,58 @@
 TAP version 13
-# runner.js
-not ok 1 /interpreted/test/close-bad/runner.js
+    # Subtest: /interpreted/test/close-bad/runner.js
+        # Subtest: close interperted tester
+        not ok 1 - Error: fake error
+          ---
+          test: close interperted tester
+          message: 'Error: fake error'
+          stack: |
+            Error
+          ...
+        1..1
+        # failed 1 of 1 tests
+    not ok 1 - close interperted tester # time=14.893ms
+      ---
+      at:
+        file: /interpreted/interpreted.js
+        line: 94
+        column: 7
+        type: Intrepreted
+        function: Intrepreted._assignClose
+        method: _assignClose
+      results:
+        plan:
+          start: 1
+          end: 1
+        count: 1
+        pass: 0
+        ok: false
+        fail: 1
+        time: 14.893
+      source: |
+        tap.test('close interperted tester', this.tapOptions, function (t) {
+      ...
+
+    1..1
+    # failed 1 of 1 tests
+    # time=41.564ms
+not ok 1 - /interpreted/test/close-bad/runner.js # time=184.225ms
   ---
-    exit:    1
-    stderr:  |
-      /interpreted/interpreted.js:97
-              if (err) throw err;
-                       ^
-      
-      Error: fake error
-    command: "/node runner.js"
+  arguments:
+    - /interpreted/test/close-bad/runner.js
+  timeout: 30000
+  results:
+    pass: 0
+    plan:
+      start: 1
+      end: 1
+    ok: false
+    fail: 1
+    count: 1
+  command: /node
+  file: /interpreted/test/close-bad/runner.js
+  exitCode: 1
   ...
 
-
 1..1
-# tests 1
-# fail  1
+# failed 1 of 1 tests
+# time=199.599ms

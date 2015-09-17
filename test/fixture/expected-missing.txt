@@ -1,18 +1,25 @@
 TAP version 13
-# runner.js
-not ok 1 /interpreted/test/expected-missing/runner.js
+    # Subtest: /interpreted/test/expected-missing/runner.js
+    1..0
+    # time=24.489ms
+not ok 1 - /interpreted/test/expected-missing/runner.js # time=164.966ms
   ---
-    exit:    1
-    stderr:  |
-      events.js:141
-            throw er; // Unhandled 'error' event
-            ^
-      
-      Error: stringify expected file is missing
-    command: "/node runner.js"
+  file: /interpreted/test/expected-missing/runner.js
+  command: /node
+  timeout: 30000
+  exitCode: 1
+  arguments:
+    - /interpreted/test/expected-missing/runner.js
+  results:
+    ok: false
+    count: 0
+    pass: 0
+    plan:
+      start: 1
+      end: 0
+      skipAll: true
   ...
 
-
 1..1
-# tests 1
-# fail  1
+# failed 1 of 1 tests
+# time=181.644ms

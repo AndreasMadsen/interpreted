@@ -1,18 +1,25 @@
 TAP version 13
-# runner.js
-not ok 1 /interpreted/test/source-missing/runner.js
+    # Subtest: /interpreted/test/source-missing/runner.js
+    1..0
+    # time=23.961ms
+not ok 1 - /interpreted/test/source-missing/runner.js # time=165.371ms
   ---
-    exit:    1
-    stderr:  |
-      events.js:141
-            throw er; // Unhandled 'error' event
-            ^
-      
-      Error: stringify source file is missing
-    command: "/node runner.js"
+  exitCode: 1
+  command: /node
+  timeout: 30000
+  results:
+    ok: false
+    count: 0
+    pass: 0
+    plan:
+      start: 1
+      end: 0
+      skipAll: true
+  file: /interpreted/test/source-missing/runner.js
+  arguments:
+    - /interpreted/test/source-missing/runner.js
   ...
 
-
 1..1
-# tests 1
-# fail  1
+# failed 1 of 1 tests
+# time=180.8ms
