@@ -6,7 +6,8 @@ not ok 1 /interpreted/test/test-bad/runner.js
     stderr:  |
       /interpreted/interpreted.js:123
               if (err) throw err;
-                             ^
+                       ^
+      
       Error: fake error
     command: "/node runner.js"
   ...

@@ -1,7 +1,7 @@
 {
   "name": "interpreted",
   "description": "node-tap wrapper for testing input/output functionality",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./interpreted.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "transform"
   ],
   "dependencies": {
-    "tap": "0.4.x",
-    "async": "0.2.x",
+    "tap": "1.4.x",
+    "async": "1.4.x",
     "util-extend": "1.0.x"
   },
   "devDependencies": {

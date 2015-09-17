@@ -4,9 +4,10 @@ not ok 1 /interpreted/test/expected-missing/runner.js
   ---
     exit:    1
     stderr:  |
-      events.js:82
+      events.js:141
             throw er; // Unhandled 'error' event
-                  ^
+            ^
+      
       Error: stringify expected file is missing
     command: "/node runner.js"
   ...
