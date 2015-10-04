@@ -11,6 +11,7 @@ function Intrepreted(settings) {
 
   var self = this;
 
+  this._readSource = settings.hasOwnProperty('readSource') ? !!settings.readSource : true;
   this.source = path.resolve(settings.source);
   this.expected = path.resolve(settings.expected);
 
@@ -109,7 +110,11 @@ Intrepreted.prototype._assignTest = function (name) {
 
     async.parallel({
       source: function (done) {
-        fs.readFile(self.files.source[name], 'utf8', done);
+        if (self._readSource) {
+          fs.readFile(self.files.source[name], 'utf8', done);
+        } else {
+          done(null, null);
+        }
       },
 
       expected: function (done) {
@@ -118,7 +123,13 @@ Intrepreted.prototype._assignTest = function (name) {
     }, function (err, file) {
       if (err) throw err;
 
-      self.methods.test(name, file.source, function (err, result) {
+      if (self._readSource) {
+        self.methods.test(name, file.source, posttest);
+      } else {
+        self.methods.test(name, posttest);
+      }
+
+      function posttest(err, result) {
 
         if (err) throw err;
         var expectedPath = self.files.expected[name];
@@ -134,7 +145,7 @@ Intrepreted.prototype._assignTest = function (name) {
           validater.test(t, result, file.expected);
           t.end();
         }
-      });
+      }
     });
   });
 };

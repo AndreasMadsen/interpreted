@@ -32,6 +32,10 @@ interpreted({
   // the actual value. Default: false
   update: false,
 
+  // optional, read source file flag. If true the source file is read and passed
+  // as a second argument to the test function. Default: true
+  sourceRead: true,
+
   // optional. This method will execute before the file tests.
   start: function (callback) {
     callback(null);

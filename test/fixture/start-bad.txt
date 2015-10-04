@@ -10,11 +10,11 @@ TAP version 13
           ...
         1..1
         # failed 1 of 1 tests
-    not ok 1 - start interpreted tester # time=15.203ms
+    not ok 1 - start interpreted tester # time=15.189ms
       ---
       at:
         file: /interpreted/interpreted.js
-        line: 78
+        line: 79
         column: 7
         type: Intrepreted
         function: Intrepreted._assignStart
@@ -27,32 +27,32 @@ TAP version 13
         pass: 0
         ok: false
         fail: 1
-        time: 15.203
+        time: 15.189
       source: |
         tap.test('start interpreted tester', this.tapOptions, function (t) {
       ...
 
     1..1
     # failed 1 of 1 tests
-    # time=45.01ms
-not ok 1 - /interpreted/test/start-bad/runner.js # time=196.513ms
+    # time=41.711ms
+not ok 1 - /interpreted/test/start-bad/runner.js # time=182.113ms
   ---
-  command: /node
-  file: /interpreted/test/start-bad/runner.js
-  arguments:
-    - /interpreted/test/start-bad/runner.js
-  timeout: 30000
   results:
     plan:
       start: 1
       end: 1
-    pass: 0
     ok: false
-    fail: 1
     count: 1
+    fail: 1
+    pass: 0
+  arguments:
+    - /interpreted/test/start-bad/runner.js
+  command: /node
+  timeout: 30000
+  file: /interpreted/test/start-bad/runner.js
   exitCode: 1
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=212.368ms
+# time=197.299ms

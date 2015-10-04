@@ -47,6 +47,8 @@ function runTest(name, callback) {
 
 test('all good', runTest('all-good'));
 
+test('no source read', runTest('no-source-read'));
+
 test('file-ext', runTest('file-ext'));
 
 test('run only', runTest('run-only'));

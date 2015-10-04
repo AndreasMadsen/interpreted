@@ -1,15 +1,9 @@
 TAP version 13
     # Subtest: /interpreted/test/expected-missing/runner.js
     1..0
-    # time=24.489ms
-not ok 1 - /interpreted/test/expected-missing/runner.js # time=164.966ms
+    # time=25.264ms
+not ok 1 - /interpreted/test/expected-missing/runner.js # time=164.113ms
   ---
-  file: /interpreted/test/expected-missing/runner.js
-  command: /node
-  timeout: 30000
-  exitCode: 1
-  arguments:
-    - /interpreted/test/expected-missing/runner.js
   results:
     ok: false
     count: 0
@@ -18,8 +12,14 @@ not ok 1 - /interpreted/test/expected-missing/runner.js # time=164.966ms
       start: 1
       end: 0
       skipAll: true
+  exitCode: 1
+  file: /interpreted/test/expected-missing/runner.js
+  timeout: 30000
+  command: /node
+  arguments:
+    - /interpreted/test/expected-missing/runner.js
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=181.644ms
+# time=180.19ms

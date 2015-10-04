@@ -10,11 +10,11 @@ TAP version 13
           ...
         1..1
         # failed 1 of 1 tests
-    not ok 1 - test stringify interpreted # time=16.751ms
+    not ok 1 - test stringify interpreted # time=17.735ms
       ---
       at:
         file: /interpreted/interpreted.js
-        line: 108
+        line: 109
         column: 7
         type: Intrepreted
         function: Intrepreted._assignTest
@@ -27,32 +27,32 @@ TAP version 13
         pass: 0
         ok: false
         fail: 1
-        time: 16.751
+        time: 17.735
       source: |
         tap.test('test ' + name + ' interpreted', this.tapOptions, function (t) {
       ...
 
     1..1
     # failed 1 of 1 tests
-    # time=46.913ms
-not ok 1 - /interpreted/test/test-bad/runner.js # time=203.436ms
+    # time=46.666ms
+not ok 1 - /interpreted/test/test-bad/runner.js # time=195.824ms
   ---
   results:
-    count: 1
-    ok: false
     fail: 1
     pass: 0
+    count: 1
     plan:
       start: 1
       end: 1
-  command: /node
+    ok: false
+  timeout: 30000
+  exitCode: 1
+  file: /interpreted/test/test-bad/runner.js
   arguments:
     - /interpreted/test/test-bad/runner.js
-  exitCode: 1
-  timeout: 30000
-  file: /interpreted/test/test-bad/runner.js
+  command: /node
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=219.397ms
+# time=212.418ms

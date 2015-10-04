@@ -10,11 +10,11 @@ TAP version 13
           ...
         1..1
         # failed 1 of 1 tests
-    not ok 1 - close interperted tester # time=14.893ms
+    not ok 1 - close interperted tester # time=14.74ms
       ---
       at:
         file: /interpreted/interpreted.js
-        line: 94
+        line: 95
         column: 7
         type: Intrepreted
         function: Intrepreted._assignClose
@@ -27,32 +27,32 @@ TAP version 13
         pass: 0
         ok: false
         fail: 1
-        time: 14.893
+        time: 14.74
       source: |
         tap.test('close interperted tester', this.tapOptions, function (t) {
       ...
 
     1..1
     # failed 1 of 1 tests
-    # time=41.564ms
-not ok 1 - /interpreted/test/close-bad/runner.js # time=184.225ms
+    # time=41.595ms
+not ok 1 - /interpreted/test/close-bad/runner.js # time=187.746ms
   ---
+  exitCode: 1
+  timeout: 30000
   arguments:
     - /interpreted/test/close-bad/runner.js
-  timeout: 30000
+  file: /interpreted/test/close-bad/runner.js
+  command: /node
   results:
-    pass: 0
     plan:
       start: 1
       end: 1
+    count: 1
+    pass: 0
     ok: false
     fail: 1
-    count: 1
-  command: /node
-  file: /interpreted/test/close-bad/runner.js
-  exitCode: 1
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=199.599ms
+# time=203.223ms
