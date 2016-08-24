@@ -3,19 +3,37 @@ TAP version 13
         # Subtest: test stringify interpreted
         not ok 1 - Error: fake error
           ---
+          at:
+            line: 12
+            column: 14
+            file: runner.js
+            function: Object.interpreted.test
+          stack: >
+            Object.interpreted.test (runner.js:12:14)
+
+            /interpreted/interpreted.js:127:22
+
+            /interpreted/node_modules/async/dist/async.js:3679:13
+
+            /interpreted/node_modules/async/dist/async.js:486:20
+
+            iterateeCallback
+            (/interpreted/node_modules/async/dist/async.js:867:28)
+
+            /interpreted/node_modules/async/dist/async.js:847:20
           test: test stringify interpreted
           message: 'Error: fake error'
-          stack: |
-            Error
+          source: |
+            callback(new Error('fake error'));
           ...
         1..1
         # failed 1 of 1 tests
-    not ok 1 - test stringify interpreted # time=17.735ms
+    not ok 1 - test stringify interpreted # time=16.322ms
       ---
       at:
-        file: /interpreted/interpreted.js
         line: 109
         column: 7
+        file: /interpreted/interpreted.js
         type: Intrepreted
         function: Intrepreted._assignTest
         method: _assignTest
@@ -27,32 +45,32 @@ TAP version 13
         pass: 0
         ok: false
         fail: 1
-        time: 17.735
+        time: 16.322
       source: |
         tap.test('test ' + name + ' interpreted', this.tapOptions, function (t) {
       ...
 
     1..1
     # failed 1 of 1 tests
-    # time=46.666ms
-not ok 1 - /interpreted/test/test-bad/runner.js # time=195.824ms
+    # time=44.125ms
+not ok 1 - /interpreted/test/test-bad/runner.js # time=202.571ms
   ---
+  timeout: 30000
+  file: /interpreted/test/test-bad/runner.js
   results:
-    fail: 1
-    pass: 0
+    ok: false
     count: 1
+    pass: 0
+    fail: 1
     plan:
       start: 1
       end: 1
-    ok: false
-  timeout: 30000
   exitCode: 1
-  file: /interpreted/test/test-bad/runner.js
+  command: /node
   arguments:
     - /interpreted/test/test-bad/runner.js
-  command: /node
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=212.418ms
+# time=220.179ms

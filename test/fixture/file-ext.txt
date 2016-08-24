@@ -3,21 +3,21 @@ TAP version 13
         # Subtest: test default interpreted
         ok 1 - should be equal
         1..1
-    ok 1 - test default interpreted # time=13.011ms
+    ok 1 - test default interpreted # time=10.173ms
 
         # Subtest: test special interpreted
         ok 1 - expect truthy value
         1..1
-    ok 2 - test special interpreted # time=5.586ms
+    ok 2 - test special interpreted # time=1.849ms
 
         # Subtest: test stringify interpreted
         ok 1 - should be equivalent
         1..1
-    ok 3 - test stringify interpreted # time=2.986ms
+    ok 3 - test stringify interpreted # time=2.367ms
 
     1..3
-    # time=49.62ms
-ok 1 - /interpreted/test/file-ext/runner.js # time=191.606ms
+    # time=47.833ms
+ok 1 - /interpreted/test/file-ext/runner.js # time=217.427ms
 
 1..1
-# time=203.58ms
+# time=239.53ms

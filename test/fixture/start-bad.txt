@@ -3,19 +3,29 @@ TAP version 13
         # Subtest: start interpreted tester
         not ok 1 - Error: fake error
           ---
+          at:
+            line: 12
+            column: 14
+            file: runner.js
+            function: Object.interpreted.start
+          stack: |
+            Object.interpreted.start (runner.js:12:14)
+            /interpreted/interpreted.js:81:20
+            _combinedTickCallback (internal/process/next_tick.js:67:7)
+            process._tickCallback (internal/process/next_tick.js:98:9)
           test: start interpreted tester
           message: 'Error: fake error'
-          stack: |
-            Error
+          source: |
+            callback(new Error('fake error'));
           ...
         1..1
         # failed 1 of 1 tests
-    not ok 1 - start interpreted tester # time=15.189ms
+    not ok 1 - start interpreted tester # time=14.784ms
       ---
       at:
-        file: /interpreted/interpreted.js
         line: 79
         column: 7
+        file: /interpreted/interpreted.js
         type: Intrepreted
         function: Intrepreted._assignStart
         method: _assignStart
@@ -27,32 +37,32 @@ TAP version 13
         pass: 0
         ok: false
         fail: 1
-        time: 15.189
+        time: 14.784
       source: |
         tap.test('start interpreted tester', this.tapOptions, function (t) {
       ...
 
     1..1
     # failed 1 of 1 tests
-    # time=41.711ms
-not ok 1 - /interpreted/test/start-bad/runner.js # time=182.113ms
+    # time=41.527ms
+not ok 1 - /interpreted/test/start-bad/runner.js # time=189.775ms
   ---
+  timeout: 30000
+  file: /interpreted/test/start-bad/runner.js
   results:
+    ok: false
+    count: 1
+    pass: 0
+    fail: 1
     plan:
       start: 1
       end: 1
-    ok: false
-    count: 1
-    fail: 1
-    pass: 0
+  exitCode: 1
+  command: /node
   arguments:
     - /interpreted/test/start-bad/runner.js
-  command: /node
-  timeout: 30000
-  file: /interpreted/test/start-bad/runner.js
-  exitCode: 1
   ...
 
 1..1
 # failed 1 of 1 tests
-# time=197.299ms
+# time=209.634ms
