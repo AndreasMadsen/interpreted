@@ -7,7 +7,7 @@
   "scripts": {
     "test": "tap --reporter=tap test/runner.js"
   },
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "git://github.com/AndreasMadsen/interpreted.git"
   },
@@ -18,9 +18,9 @@
     "transform"
   ],
   "dependencies": {
-    "tap": "^6.3.2",
-    "async": "^2.0.1",
-    "util-extend": "^1.0.1"
+    "tap": "^12.0.1",
+    "async": "^2.6.1",
+    "util-extend": "^1.0.3"
   },
   "devDependencies": {
     "endpoint": "0.4.x"
