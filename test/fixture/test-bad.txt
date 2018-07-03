@@ -1,76 +1,53 @@
 TAP version 13
-    # Subtest: /interpreted/test/test-bad/runner.js
-        # Subtest: test stringify interpreted
-        not ok 1 - Error: fake error
+# Subtest: /interpreted/test/test-bad/runner.js
+    # Subtest: test stringify interpreted
+        not ok 1 - fake error
           ---
+          stack: >
+            Object.test (runner.js:12:14)
+          
+            /interpreted/interpreted.js:127:22
+          
+            /interpreted/node_modules/async/dist/async.js:3888:9
+          
+            /interpreted/node_modules/async/dist/async.js:473:16
+          
+            iterateeCallback
+            (/interpreted/node_modules/async/dist/async.js:992:24)
+          
+            /interpreted/node_modules/async/dist/async.js:969:16
           at:
             line: 12
             column: 14
             file: runner.js
-            function: Object.interpreted.test
-          stack: >
-            Object.interpreted.test (runner.js:12:14)
-
-            /interpreted/interpreted.js:127:22
-
-            /interpreted/node_modules/async/dist/async.js:3679:13
-
-            /interpreted/node_modules/async/dist/async.js:486:20
-
-            iterateeCallback
-            (/interpreted/node_modules/async/dist/async.js:867:28)
-
-            /interpreted/node_modules/async/dist/async.js:847:20
+            function: Object.test
           test: test stringify interpreted
-          message: 'Error: fake error'
           source: |
             callback(new Error('fake error'));
           ...
+        
         1..1
-        # failed 1 of 1 tests
-    not ok 1 - test stringify interpreted # time=16.322ms
-      ---
-      at:
-        line: 109
-        column: 7
-        file: /interpreted/interpreted.js
-        type: Intrepreted
-        function: Intrepreted._assignTest
-        method: _assignTest
-      results:
-        plan:
-          start: 1
-          end: 1
-        count: 1
-        pass: 0
-        ok: false
-        fail: 1
-        time: 16.322
-      source: |
-        tap.test('test ' + name + ' interpreted', this.tapOptions, function (t) {
-      ...
-
+        # failed 1 test
+    not ok 1 - test stringify interpreted # time=25.529ms
+    
     1..1
-    # failed 1 of 1 tests
-    # time=44.125ms
-not ok 1 - /interpreted/test/test-bad/runner.js # time=202.571ms
+    # failed 1 test
+    # time=34.003ms
+not ok 1 - /interpreted/test/test-bad/runner.js # time=340.126ms
   ---
   timeout: 30000
   file: /interpreted/test/test-bad/runner.js
-  results:
-    ok: false
-    count: 1
-    pass: 0
-    fail: 1
-    plan:
-      start: 1
-      end: 1
-  exitCode: 1
   command: /node
-  arguments:
+  args:
     - /interpreted/test/test-bad/runner.js
+  stdio:
+    - 0
+    - pipe
+    - 2
+  cwd: /interpreted/test/test-bad
+  exitCode: 1
   ...
 
 1..1
-# failed 1 of 1 tests
-# time=220.179ms
+# failed 1 test
+# time=365.344ms

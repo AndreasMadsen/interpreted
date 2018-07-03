@@ -1,12 +1,12 @@
 TAP version 13
-    # Subtest: /interpreted/test/update-file/runner.js
-        # Subtest: test stringify interpreted
+# Subtest: /interpreted/test/update-file/runner.js
+    # Subtest: test stringify interpreted
         1..0
-    ok 1 - test stringify interpreted # time=9.237ms
-
+    ok 1 - test stringify interpreted # time=8.024ms
+    
     1..1
-    # time=34.613ms
-ok 1 - /interpreted/test/update-file/runner.js # time=185.008ms
+    # time=17.505ms
+ok 1 - /interpreted/test/update-file/runner.js # time=337.611ms
 
 1..1
-# time=197.496ms
+# time=353.476ms

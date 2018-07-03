@@ -1,24 +1,21 @@
 TAP version 13
-    # Subtest: /interpreted/test/source-missing/runner.js
-    1..0
-not ok 1 - /interpreted/test/source-missing/runner.js # time=167.266ms
+# Subtest: /interpreted/test/source-missing/runner.js
+    1..0 # no tests found
+not ok 1 - /interpreted/test/source-missing/runner.js # time=221.324ms
   ---
   timeout: 30000
   file: /interpreted/test/source-missing/runner.js
-  results:
-    ok: false
-    count: 0
-    pass: 0
-    plan:
-      start: 1
-      end: 0
-      skipAll: true
-  exitCode: 1
   command: /node
-  arguments:
+  args:
     - /interpreted/test/source-missing/runner.js
+  stdio:
+    - 0
+    - pipe
+    - 2
+  cwd: /interpreted/test/source-missing
+  exitCode: 1
   ...
 
 1..1
-# failed 1 of 1 tests
-# time=184.603ms
+# failed 1 test
+# time=241.371ms

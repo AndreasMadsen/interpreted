@@ -1,13 +1,13 @@
 TAP version 13
-    # Subtest: /interpreted/test/run-only/runner.js
-        # Subtest: test only interpreted
+# Subtest: /interpreted/test/run-only/runner.js
+    # Subtest: test only interpreted
         ok 1 - should be equivalent
         1..1
-    ok 1 - test only interpreted # time=9.877ms
-
+    ok 1 - test only interpreted # time=7.115ms
+    
     1..1
-    # time=37.51ms
-ok 1 - /interpreted/test/run-only/runner.js # time=198.193ms
+    # time=12.631ms
+ok 1 - /interpreted/test/run-only/runner.js # time=231.693ms
 
 1..1
-# time=213.537ms
+# time=243.366ms

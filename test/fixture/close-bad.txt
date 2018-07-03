@@ -1,68 +1,43 @@
 TAP version 13
-    # Subtest: /interpreted/test/close-bad/runner.js
-        # Subtest: close interperted tester
-        not ok 1 - Error: fake error
+# Subtest: /interpreted/test/close-bad/runner.js
+    # Subtest: close interperted tester
+        not ok 1 - fake error
           ---
+          stack: |
+            Object.close (runner.js:12:14)
+            /interpreted/interpreted.js:97:20
           at:
             line: 12
             column: 14
             file: runner.js
-            function: Object.interpreted.close
-          stack: |
-            Object.interpreted.close (runner.js:12:14)
-            /interpreted/interpreted.js:97:20
-            _combinedTickCallback (internal/process/next_tick.js:67:7)
-            process._tickCallback (internal/process/next_tick.js:98:9)
+            function: Object.close
           test: close interperted tester
-          message: 'Error: fake error'
           source: |
             callback(new Error('fake error'));
           ...
+        
         1..1
-        # failed 1 of 1 tests
-    not ok 1 - close interperted tester # time=16.96ms
-      ---
-      at:
-        line: 95
-        column: 7
-        file: /interpreted/interpreted.js
-        type: Intrepreted
-        function: Intrepreted._assignClose
-        method: _assignClose
-      results:
-        plan:
-          start: 1
-          end: 1
-        count: 1
-        pass: 0
-        ok: false
-        fail: 1
-        time: 16.96
-      source: |
-        tap.test('close interperted tester', this.tapOptions, function (t) {
-      ...
-
+        # failed 1 test
+    not ok 1 - close interperted tester # time=15.561ms
+    
     1..1
-    # failed 1 of 1 tests
-    # time=50.639ms
-not ok 1 - /interpreted/test/close-bad/runner.js # time=216.507ms
+    # failed 1 test
+    # time=22.398ms
+not ok 1 - /interpreted/test/close-bad/runner.js # time=240.418ms
   ---
   timeout: 30000
   file: /interpreted/test/close-bad/runner.js
-  results:
-    ok: false
-    count: 1
-    pass: 0
-    fail: 1
-    plan:
-      start: 1
-      end: 1
-  exitCode: 1
   command: /node
-  arguments:
+  args:
     - /interpreted/test/close-bad/runner.js
+  stdio:
+    - 0
+    - pipe
+    - 2
+  cwd: /interpreted/test/close-bad
+  exitCode: 1
   ...
 
 1..1
-# failed 1 of 1 tests
-# time=235.693ms
+# failed 1 test
+# time=255.616ms
