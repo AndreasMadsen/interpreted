@@ -5,7 +5,7 @@
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./interpreted.js",
   "scripts": {
-    "test": "tap --reporter=tap test/runner.js"
+    "test": "tap --reporter=tap --no-coverage test/runner.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "transform"
   ],
   "dependencies": {
-    "tap": "^12.0.1",
+    "tap": "^14.8.2",
     "async": "^2.6.1",
     "util-extend": "^1.0.3"
   },

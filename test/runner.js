@@ -23,7 +23,7 @@ function runTest(name, callback) {
   };
 
   return function (t) {
-    var cp = spawn(tapPath, ['--reporter=tap', path.resolve(__dirname, name, 'runner.js')], {
+    var cp = spawn(tapPath, ['--reporter=tap', '--no-coverage', path.resolve(__dirname, name, 'runner.js')], {
       cwd: path.resolve(__dirname, name)
     });
 
