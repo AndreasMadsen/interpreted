@@ -1,44 +1,13 @@
 TAP version 13
-# Subtest: /interpreted/test/test-bad/runner.js
-    # Subtest: test stringify interpreted
-        not ok 1 - fake error
-          ---
-          stack: >
-            Object.test (runner.js:12:14)
-          
-            /interpreted/interpreted.js:127:22
-          
-            /interpreted/node_modules/async/dist/async.js:3888:9
-          
-            /interpreted/node_modules/async/dist/async.js:473:16
-          
-            iterateeCallback
-            (/interpreted/node_modules/async/dist/async.js:992:24)
-          
-            /interpreted/node_modules/async/dist/async.js:969:16
-          at:
-            line: 12
-            column: 14
-            file: runner.js
-            function: Object.test
-          test: test stringify interpreted
-          source: |
-            callback(new Error('fake error'));
-          ...
-        
-        1..1
-        # failed 1 test
-    not ok 1 - test stringify interpreted # time=25.529ms
-    
-    1..1
-    # failed 1 test
-    # time=34.003ms
-not ok 1 - /interpreted/test/test-bad/runner.js # time=340.126ms
+not ok 1 - /interpreted/test/test-bad/runner.js # time=39.195ms
   ---
-  timeout: 30000
+  env: {}
   file: /interpreted/test/test-bad/runner.js
+  timeout: 30000
   command: /node
   args:
+    - -r
+    - /interpreted/node_modules/esm/esm.js
     - /interpreted/test/test-bad/runner.js
   stdio:
     - 0
@@ -47,7 +16,23 @@ not ok 1 - /interpreted/test/test-bad/runner.js # time=340.126ms
   cwd: /interpreted/test/test-bad
   exitCode: 1
   ...
+{
+    # Subtest: test stringify interpreted
+        not ok 1 - fake error
+          ---
+          tapCaught: uncaughtException
+          test: test stringify interpreted
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - test stringify interpreted # time=29.098ms
+    
+    1..1
+    # failed 1 test
+    # time=39.195ms
+}
 
 1..1
 # failed 1 test
-# time=365.344ms
+# time=559.272ms

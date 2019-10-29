@@ -1,34 +1,13 @@
 TAP version 13
-# Subtest: /interpreted/test/close-bad/runner.js
-    # Subtest: close interperted tester
-        not ok 1 - fake error
-          ---
-          stack: |
-            Object.close (runner.js:12:14)
-            /interpreted/interpreted.js:97:20
-          at:
-            line: 12
-            column: 14
-            file: runner.js
-            function: Object.close
-          test: close interperted tester
-          source: |
-            callback(new Error('fake error'));
-          ...
-        
-        1..1
-        # failed 1 test
-    not ok 1 - close interperted tester # time=15.561ms
-    
-    1..1
-    # failed 1 test
-    # time=22.398ms
-not ok 1 - /interpreted/test/close-bad/runner.js # time=240.418ms
+not ok 1 - /interpreted/test/close-bad/runner.js # time=48.389ms
   ---
-  timeout: 30000
+  env: {}
   file: /interpreted/test/close-bad/runner.js
+  timeout: 30000
   command: /node
   args:
+    - -r
+    - /interpreted/node_modules/esm/esm.js
     - /interpreted/test/close-bad/runner.js
   stdio:
     - 0
@@ -37,7 +16,23 @@ not ok 1 - /interpreted/test/close-bad/runner.js # time=240.418ms
   cwd: /interpreted/test/close-bad
   exitCode: 1
   ...
+{
+    # Subtest: close interperted tester
+        not ok 1 - fake error
+          ---
+          tapCaught: uncaughtException
+          test: close interperted tester
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - close interperted tester # time=26.818ms
+    
+    1..1
+    # failed 1 test
+    # time=48.389ms
+}
 
 1..1
 # failed 1 test
-# time=255.616ms
+# time=563.279ms

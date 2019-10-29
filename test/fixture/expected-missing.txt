@@ -1,14 +1,14 @@
 TAP version 13
-# Subtest: /interpreted/test/expected-missing/runner.js
-    1..0 # no tests found
-not ok 1 - /interpreted/test/expected-missing/runner.js # time=210.072ms
+not ok 1 - /interpreted/test/expected-missing/runner.js # time=420.434ms
   ---
-  timeout: 30000
+  env: {}
   file: /interpreted/test/expected-missing/runner.js
+  timeout: 30000
   command: /node
   args:
-    - >-
-      /interpreted/test/expected-missing/runner.js
+    - -r
+    - /interpreted/node_modules/esm/esm.js
+    - /interpreted/test/expected-missing/runner.js
   stdio:
     - 0
     - pipe
@@ -16,7 +16,10 @@ not ok 1 - /interpreted/test/expected-missing/runner.js # time=210.072ms
   cwd: /interpreted/test/expected-missing
   exitCode: 1
   ...
+{
+    1..0 # no tests found
+}
 
 1..1
 # failed 1 test
-# time=230.15ms
+# time=466.947ms

@@ -1,34 +1,13 @@
 TAP version 13
-# Subtest: /interpreted/test/start-bad/runner.js
-    # Subtest: start interpreted tester
-        not ok 1 - fake error
-          ---
-          stack: |
-            Object.start (runner.js:12:14)
-            /interpreted/interpreted.js:81:20
-          at:
-            line: 12
-            column: 14
-            file: runner.js
-            function: Object.start
-          test: start interpreted tester
-          source: |
-            callback(new Error('fake error'));
-          ...
-        
-        1..1
-        # failed 1 test
-    not ok 1 - start interpreted tester # time=16.321ms
-    
-    1..1
-    # failed 1 test
-    # time=23.514ms
-not ok 1 - /interpreted/test/start-bad/runner.js # time=330.127ms
+not ok 1 - /interpreted/test/start-bad/runner.js # time=64.251ms
   ---
-  timeout: 30000
+  env: {}
   file: /interpreted/test/start-bad/runner.js
+  timeout: 30000
   command: /node
   args:
+    - -r
+    - /interpreted/node_modules/esm/esm.js
     - /interpreted/test/start-bad/runner.js
   stdio:
     - 0
@@ -37,7 +16,23 @@ not ok 1 - /interpreted/test/start-bad/runner.js # time=330.127ms
   cwd: /interpreted/test/start-bad
   exitCode: 1
   ...
+{
+    # Subtest: start interpreted tester
+        not ok 1 - fake error
+          ---
+          tapCaught: uncaughtException
+          test: start interpreted tester
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - start interpreted tester # time=34.788ms
+    
+    1..1
+    # failed 1 test
+    # time=64.251ms
+}
 
 1..1
 # failed 1 test
-# time=356.328ms
+# time=736.852ms
