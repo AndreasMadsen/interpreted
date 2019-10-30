@@ -1,5 +1,5 @@
 TAP version 13
-not ok 1 - /interpreted/test/expected-missing/runner.js # time=420.434ms
+not ok 1 - /interpreted/test/expected-missing/runner.js
   ---
   env: {}
   file: /interpreted/test/expected-missing/runner.js
@@ -22,4 +22,3 @@ not ok 1 - /interpreted/test/expected-missing/runner.js # time=420.434ms
 
 1..1
 # failed 1 test
-# time=466.947ms
