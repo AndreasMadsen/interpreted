@@ -1,13 +1,11 @@
 TAP version 13
-ok 1 - /interpreted/test/all-good/runner.js # time=25.936ms {
+ok 1 - /interpreted/test/all-good/runner.js {
     # Subtest: test stringify interpreted
         ok 1 - should be equivalent
         1..1
-    ok 1 - test stringify interpreted # time=14.195ms
+    ok 1 - test stringify interpreted
     
     1..1
-    # time=25.936ms
 }
 
 1..1
-# time=688.293ms

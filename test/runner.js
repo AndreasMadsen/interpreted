@@ -35,6 +35,9 @@ function runTest(name, callback) {
       actual = replaceAll(actual.toString(), process.execPath, '/node');
       actual = actual.replace(/exit:(\s+)8/, "exit:$11");
 
+      // Remove timings
+      actual = actual.replace(/([^\s]) # time=\d+(\.\d+)?m?s/g, '$1'); // `time=` at the end of a line
+      actual = actual.replace(/\n\s*# time=\d+(\.\d+)?m?s/g, ''); // `time=` as the only element in this line
 
       fs.writeFile(path.resolve(__dirname, 'fixture', name + '.txt'), actual, function (err, expected) {
         //t.deepEqual(actual.toString(), expected.toString());
