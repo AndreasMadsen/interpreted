@@ -1,4 +1,4 @@
-#interpreted [![Build Status](https://travis-ci.org/AndreasMadsen/interpreted.png?branch=master)](https://travis-ci.org/AndreasMadsen/interpreted)
+# interpreted [![Build Status](https://travis-ci.org/AndreasMadsen/interpreted.png?branch=master)](https://travis-ci.org/AndreasMadsen/interpreted)
 
 > node-tap wrapper for testing input/output functionality
 
@@ -11,22 +11,20 @@ npm install interpreted
 ## Documentation
 
 ```javascript
-
-var interpreted = require('interpreted');
+var interpreted = require("interpreted");
 
 interpreted({
-
   // required. full path to the source file directory and the expected directory
   // the expected directory should contain JSON files (e.q. example.json)
   // and the source directory can contain anything. Note that the basename
   // must exist in both source and expected directroy.
   // (e.q yaml to json converter: source/example.yaml, expected/example.json)
-  source: path.resolve(__dirname, 'source'),
-  expected: path.resolve(__dirname, 'expected'),
+  source: path.resolve(__dirname, "source"),
+  expected: path.resolve(__dirname, "expected"),
 
   // optional. the basenames of the files to use in tests. If this is not specified
   // all tests will be used.
-  run: ['example'],
+  run: ["example"],
 
   // optional, update flag. Instead of testing expected files, they will be overwritten with
   // the actual value. Default: false
@@ -55,26 +53,25 @@ interpreted({
   // optional. This configuration object will be passed to the tap.test
   // function.
   tap: {
-    timeout: 3000
+    timeout: 3000,
   },
 
   // optional: by default json files are parsed and everything else is threaded
   // as a simple text. You can extend this behaviour.
   types: {
-    'yaml': {
-      'test': function (t, actual, expected) {
+    yaml: {
+      test: function (t, actual, expected) {
         t.deepEqual(actual, YAML.parse(expected));
       },
-      'update': function (actual) {
+      update: function (actual) {
         return YAML.stringify(actual);
-      }
-    }
-  }
+      },
+    },
+  },
 });
-
 ```
 
-##License
+## License
 
 **The software is license under "MIT"**
 
