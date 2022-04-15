@@ -1,5 +1,5 @@
 TAP version 13
-not ok 1 - /interpreted/test/test-bad/runner.js # time=39.195ms
+not ok 1 - /interpreted/test/test-bad/runner.js
   ---
   env: {}
   file: /interpreted/test/test-bad/runner.js
@@ -26,13 +26,11 @@ not ok 1 - /interpreted/test/test-bad/runner.js # time=39.195ms
         
         1..1
         # failed 1 test
-    not ok 1 - test stringify interpreted # time=29.098ms
+    not ok 1 - test stringify interpreted
     
     1..1
     # failed 1 test
-    # time=39.195ms
 }
 
 1..1
 # failed 1 test
-# time=559.272ms
