@@ -40,7 +40,7 @@ function runTest(name, callback) {
       actual = actual.replace(/\n\s*# time=\d+(\.\d+)?m?s/g, ''); // `time=` as the only element in this line
 
       fs.writeFile(path.resolve(__dirname, 'fixture', name + '.txt'), actual, function (err, expected) {
-        //t.deepEqual(actual.toString(), expected.toString());
+        //t.same(actual.toString(), expected.toString());
 
         callback(t);
       });
@@ -77,7 +77,7 @@ test('update-file', runTest('update-file', function (t) {
     fs.readFile(expectedPath, 'utf8', function (err, expected) {
       t.equal(err, null);
 
-      t.deepEqual(actual, expected);
+      t.same(actual, expected);
 
       fs.writeFile(acutalPath, restore, function () {
         t.equal(err, null);
