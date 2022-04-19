@@ -6,8 +6,6 @@ not ok 1 - /interpreted/test/start-bad/runner.js
   timeout: 30000
   command: /node
   args:
-    - -r
-    - /interpreted/node_modules/esm/esm.js
     - /interpreted/test/start-bad/runner.js
   stdio:
     - 0
